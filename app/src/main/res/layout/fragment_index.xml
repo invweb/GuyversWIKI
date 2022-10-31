@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ui.IndexFragment">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:background="#18FFFF"
+            android:contentDescription="@string/logo"
+            android:padding="@dimen/basic_padding_margin"
+            android:scaleType="fitXY"
+            android:src="@drawable/logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/menu_title"
+            style="@style/GuyverWIKIStyleIndexTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/basic_padding_margin"
+            android:text="@string/menu_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/menu_title">
+
+            <com.zx_tole.guyverwiki.view.ListItem
+                android:id="@+id/guyver_story_characters_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                custom:src="@drawable/guyver_chars"
+                custom:backgroundColor="#FF4741"
+                custom:titleText="@string/menu_item_characters"
+                custom:valueColor="#000104" />
+
+            <com.zx_tole.guyverwiki.view.ListItem
+                android:id="@+id/guyvers_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                custom:src="@drawable/guyvers"
+                custom:backgroundColor="#E040FB"
+                custom:titleText="@string/menu_item_guyvers"
+                custom:valueColor="#4D65FF" />
+
+            <com.zx_tole.guyverwiki.view.ListItem
+                android:id="@+id/zoanoids_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                custom:src="@drawable/zoanoids"
+                custom:backgroundColor="#FFAB40"
+                custom:titleText="@string/menu_item_zoanoids"
+                custom:valueColor="#FF4D71" />
+
+            <com.zx_tole.guyverwiki.view.ListItem
+                android:id="@+id/zoalords_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                custom:src="@drawable/zoalords"
+                custom:backgroundColor="#BDFF41"
+                custom:titleText="@string/menu_item_zoalords"
+                custom:valueColor="#F40707" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

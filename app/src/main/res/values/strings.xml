@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Guyver WIKI</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="menu_title">Menu</string>
+    <string name="menu_item_characters">Characters</string>
+    <string name="menu_item_zoalords">Zoalords</string>
+    <string name="logo">logo</string>
+    <string name="menu_fragment_label">Application menu</string>
+    <string name="zoalords_fragment_label">Zoalords</string>
+    <string name="zoanoids_fragment_label">Zoanoids</string>
+    <string name="action_settings">action settings</string>
+    <string name="previous">previous</string>
+    <string name="menu_item_guyvers">Guyvers</string>
+    <string name="menu_item_zoanoids">Zoanoids</string>
+</resources>

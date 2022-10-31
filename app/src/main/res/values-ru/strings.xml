@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Гайвер ВИКИ</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="menu_title">Меню</string>
+    <string name="menu_item_characters">Персонажи</string>
+    <string name="menu_item_zoalords">Зоалорды</string>
+    <string name="logo">логотип</string>
+    <string name="menu_fragment_label">Меню приложения</string>
+    <string name="zoalords_fragment_label">Зоалорды</string>
+    <string name="zoanoids_fragment_label">Зоаноиды</string>
+    <string name="action_settings">дейчтвие настройки</string>
+    <string name="previous">назад</string>
+    <string name="menu_item_guyvers">Гайверы</string>
+    <string name="menu_item_zoanoids">Зоаноиды</string>
+</resources>
