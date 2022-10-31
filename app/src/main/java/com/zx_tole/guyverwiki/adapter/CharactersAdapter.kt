@@ -1,11 +1,9 @@
 package com.zx_tole.guyverwiki.adapter
 
-import android.R
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import com.zx_tole.guyverwiki.BR

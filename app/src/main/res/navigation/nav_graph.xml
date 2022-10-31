@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/IndexFragment"
-        android:name="com.zx_tole.guyverwiki.ui.IndexFragment"
+        android:name="com.zx_tole.guyverwiki.ui.fragment.IndexFragment"
         android:label="@string/menu_fragment_label"
         tools:layout="@layout/fragment_index">
 
@@ -29,7 +29,7 @@
     </fragment>
     <fragment
         android:id="@+id/ZoalordsFragment"
-        android:name="com.zx_tole.guyverwiki.ui.ZoalordsFragment"
+        android:name="com.zx_tole.guyverwiki.ui.fragment.ZoalordsFragment"
         android:label="@string/zoalords_fragment_label"
         tools:layout="@layout/fragment_zoalords">
 
@@ -40,7 +40,7 @@
 
     <fragment
         android:id="@+id/ZoanoidsFragment"
-        android:name="com.zx_tole.guyverwiki.ui.ZoanoidsFragment"
+        android:name="com.zx_tole.guyverwiki.ui.fragment.ZoanoidsFragment"
         android:label="@string/menu_item_zoanoids"
         tools:layout="@layout/fragment_zoanoids">
 
@@ -51,7 +51,7 @@
 
     <fragment
         android:id="@+id/GuyversFragment"
-        android:name="com.zx_tole.guyverwiki.ui.GuyversFragment"
+        android:name="com.zx_tole.guyverwiki.ui.fragment.GuyversFragment"
         android:label="@string/menu_item_guyvers"
         tools:layout="@layout/fragment_zoanoids">
 
@@ -62,7 +62,7 @@
 
     <fragment
         android:id="@+id/CharactersFragment"
-        android:name="com.zx_tole.guyverwiki.ui.CharactersFragment"
+        android:name="com.zx_tole.guyverwiki.ui.fragment.CharactersFragment"
         android:label="@string/menu_item_characters"
         tools:layout="@layout/fragment_zoanoids">
 
