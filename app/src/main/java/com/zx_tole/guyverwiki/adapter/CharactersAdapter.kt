@@ -57,7 +57,7 @@ class CharactersAdapter : RecyclerView.Adapter<CharactersAdapter.CharactersViewH
             bundle.putParcelable(CHARACTER, character)
 
             navController.navigate(
-                R.id.action_CharactersFragment_to_CharacterFragment,
+                R.id.CharacterFragment,
                 bundle
             )
         }

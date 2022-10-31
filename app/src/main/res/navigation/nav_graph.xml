@@ -69,10 +69,6 @@
         <action
             android:id="@+id/action_CharactersFragment_to_IndexFragment"
             app:destination="@id/IndexFragment" />
-
-        <action
-            android:id="@+id/action_CharactersFragment_to_CharacterFragment"
-            app:destination="@id/CharacterFragment" />
     </fragment>
 
     <fragment

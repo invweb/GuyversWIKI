@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.zx_tole.guyverwiki.adapter.CharactersAdapter
@@ -34,6 +35,8 @@ class ZoanoidsFragment : Fragment() {
 
         val zoanoids: List<StoryCharacter> = createZoanoidList()
         adapter = CharactersAdapter()
+
+        adapter.setNavController(findNavController())
         adapter.setItems(zoanoids)
 
         val linearLayoutManager = LinearLayoutManager(requireContext())
