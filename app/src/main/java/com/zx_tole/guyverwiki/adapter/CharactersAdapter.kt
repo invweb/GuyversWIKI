@@ -10,6 +10,7 @@ import com.zx_tole.guyverwiki.BR
 import com.zx_tole.guyverwiki.data.StoryCharacter
 import com.zx_tole.guyverwiki.databinding.ZoanoidItemBinding
 import timber.log.Timber
+import java.text.FieldPosition
 
 
 class CharactersAdapter : RecyclerView.Adapter<CharactersAdapter.CharactersViewHolder>(){
@@ -30,6 +31,7 @@ class CharactersAdapter : RecyclerView.Adapter<CharactersAdapter.CharactersViewH
 
     override fun onBindViewHolder(holder: CharactersViewHolder, position: Int) {
         holder.binding.setVariable(BR.StoryCharacter, characters[position])
+        holder.setItemPosition(position)
     }
 
     override fun getItemCount(): Int = characters.size
@@ -37,12 +39,19 @@ class CharactersAdapter : RecyclerView.Adapter<CharactersAdapter.CharactersViewH
     inner class CharactersViewHolder(itemBinding: ZoanoidItemBinding) : RecyclerView.ViewHolder(itemBinding.root),
         View.OnClickListener{
         val binding: ViewDataBinding = itemBinding
+        var localItemPosition: Int = 0
+        var character: StoryCharacter? = null
 
         init {
             binding.root.setOnClickListener(this)
         }
         override fun onClick(p0: View?) {
-            Timber.d("")
+            character = characters[localItemPosition]
+
+        }
+
+        fun setItemPosition(position: Int) {
+            localItemPosition = position
         }
     }
 }
