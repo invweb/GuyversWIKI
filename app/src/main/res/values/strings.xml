@@ -3,6 +3,7 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="menu_title">Menu</string>
     <string name="menu_item_characters">Characters</string>
+    <string name="menu_item_character">Character</string>
     <string name="menu_item_zoalords">Zoalords</string>
     <string name="logo">logo</string>
     <string name="menu_fragment_label">Application menu</string>

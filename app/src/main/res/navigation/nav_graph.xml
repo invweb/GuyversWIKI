@@ -69,5 +69,16 @@
         <action
             android:id="@+id/action_CharactersFragment_to_IndexFragment"
             app:destination="@id/IndexFragment" />
+
+        <action
+            android:id="@+id/action_CharactersFragment_to_CharacterFragment"
+            app:destination="@id/CharacterFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/CharacterFragment"
+        android:name="com.zx_tole.guyverwiki.ui.fragment.CharacterFragment"
+        android:label="@string/menu_item_character"
+        tools:layout="@layout/fragment_zoanoids">
     </fragment>
 </navigation>
