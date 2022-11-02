@@ -54,6 +54,8 @@ class GuyversFragment : Fragment() {
             linearLayoutManager.orientation
         )
         binding.guyversRecyclerView.addItemDecoration(dividerItemDecoration)
+
+        viewModel.parseGuyversJson(requireContext())
     }
 
     override fun onDestroyView() {
