@@ -37,10 +37,6 @@ class ZoalordsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        binding.buttonSecond.setOnClickListener {
-//            findNavController().navigate(R.id.action_ZoalordsFragment_to_IndexFragment)
-//        }
-
         binding.zoalordsRecyclerView.setHasFixedSize(true)
 
         val zoalords: List<StoryCharacter> = viewModel.createZoalordList()
