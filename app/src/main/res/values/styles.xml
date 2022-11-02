@@ -8,4 +8,21 @@
         <item name="android:focusable">false</item>
         <item name="android:clickable">false</item>
     </style>
+
+    <style name="GuyverWIKIStyleCharName">
+        <item name="android:textSize">26sp</item>
+        <item name="android:textColor">@color/char_name</item>
+        <item name="android:typeface">serif</item>
+        <item name="android:focusable">false</item>
+        <item name="android:clickable">false</item>
+    </style>
+
+    <style name="GuyverWIKIStyleCharDescription">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/char_description</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:focusable">false</item>
+        <item name="android:clickable">false</item>
+    </style>
+
 </resources>

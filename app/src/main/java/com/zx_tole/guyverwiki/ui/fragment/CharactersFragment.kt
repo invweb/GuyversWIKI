@@ -6,14 +6,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.zx_tole.guyverwiki.adapter.CharactersAdapter
 import com.zx_tole.guyverwiki.data.StoryCharacter
 import com.zx_tole.guyverwiki.databinding.FragmentCharactersBinding
+import com.zx_tole.guyverwiki.ui.vm.CharactersViewModel
 
 class CharactersFragment : Fragment() {
+    private val viewModel: CharactersViewModel by viewModels()
     private var _binding: FragmentCharactersBinding? = null
 
     private val binding get() = _binding!!
@@ -33,7 +36,7 @@ class CharactersFragment : Fragment() {
 
         binding.charactersRecyclerView.setHasFixedSize(true)
 
-        val characters: List<StoryCharacter> = createCharactersList()
+        val characters: List<StoryCharacter> = viewModel.createCharactersList()
         adapter = CharactersAdapter()
 
         adapter.setNavController(findNavController())
@@ -50,23 +53,6 @@ class CharactersFragment : Fragment() {
             linearLayoutManager.orientation
         )
         binding.charactersRecyclerView.addItemDecoration(dividerItemDecoration)
-    }
-
-    private fun createCharactersList(): List<StoryCharacter> {
-        val characterOne = StoryCharacter(
-            "Masaki Murakami",
-            "https://static.wikia.nocookie.net/anime-characters-fight/images/c/c7/Murakami_Masaki_%282%29.jpg/revision/latest/scale-to-width-down/139?cb=20161201162413&path-prefix=ru"
-        )
-
-        val characterTwo = StoryCharacter(
-            "Мидзуки Сэгава",
-            "https://comicvine.gamespot.com/a/uploads/scale_medium/1/19373/1069965-mizuki.jpg"
-        )
-
-        return listOf(
-            characterOne,
-            characterTwo
-        )
     }
 
     override fun onDestroyView() {

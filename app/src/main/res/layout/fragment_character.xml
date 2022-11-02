@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -9,28 +10,48 @@
             type="com.zx_tole.guyverwiki.data.StoryCharacter" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textView"
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="148dp"
-            android:gravity="center_horizontal"
-            android:text="@{StoryCharacter.name}"
-            app:layout_constraintBottom_toTopOf="@+id/textView2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:orientation="vertical"
+            >
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:imageUrl="@{StoryCharacter.imageLink}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/name"
+                style="@style/GuyverWIKIStyleCharName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="148dp"
+                android:gravity="center_horizontal"
+                android:text="@{StoryCharacter.name}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/description"
+                style="@style/GuyverWIKIStyleCharDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/double_padding_margin"
+                android:paddingStart="@dimen/basic_padding_margin"
+                android:paddingEnd="@dimen/basic_padding_margin"
+                android:text="@{StoryCharacter.description}"
+                app:layout_constraintTop_toBottomOf="@+id/name"
+                tools:layout_editor_absoluteX="-91dp" />
+
+            <TextView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/triple_padding_margin"
+                app:imageUrl="@{StoryCharacter.imageLink}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:layout_editor_absoluteX="-16dp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
 </layout>
