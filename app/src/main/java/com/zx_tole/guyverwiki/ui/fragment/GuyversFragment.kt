@@ -37,7 +37,7 @@ class GuyversFragment : Fragment() {
 
         binding.guyversRecyclerView.setHasFixedSize(true)
 
-        val guyvers: List<StoryCharacter> = viewModel.createGuyverList()
+        val guyvers: List<StoryCharacter> = viewModel.parseGuyversJson(requireContext())
         adapter = CharactersAdapter()
 
         adapter.setNavController(findNavController())
@@ -55,7 +55,9 @@ class GuyversFragment : Fragment() {
         )
         binding.guyversRecyclerView.addItemDecoration(dividerItemDecoration)
 
-        viewModel.parseGuyversJson(requireContext())
+        val parsedGuyvers = viewModel.parseGuyversJson(requireContext())
+        adapter.setItems(parsedGuyvers)
+        adapter.notifyDataSetChanged()
     }
 
     override fun onDestroyView() {
