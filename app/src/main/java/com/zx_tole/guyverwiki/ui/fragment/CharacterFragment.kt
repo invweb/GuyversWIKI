@@ -34,6 +34,6 @@ class CharacterFragment : Fragment() {
 
         binding.storyCharacter = storyCharacter
 
-        Timber.d("")
+        Timber.d("CharacterFragment:onViewCreated")
     }
 }
