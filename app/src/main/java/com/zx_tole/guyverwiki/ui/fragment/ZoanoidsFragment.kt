@@ -37,7 +37,7 @@ class ZoanoidsFragment : Fragment() {
 
         binding.zoanoidsRecyclerView.setHasFixedSize(true)
 
-        val zoanoids: List<StoryCharacter> = viewModel.createZoanoidList()
+        val zoanoids: List<StoryCharacter> = viewModel.parseZoanoidsJson(requireContext())
         adapter = CharactersAdapter()
 
         adapter.setNavController(findNavController())
