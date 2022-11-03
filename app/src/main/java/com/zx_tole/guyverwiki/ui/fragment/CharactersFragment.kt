@@ -36,7 +36,7 @@ class CharactersFragment : Fragment() {
 
         binding.charactersRecyclerView.setHasFixedSize(true)
 
-        val characters: List<StoryCharacter> = viewModel.createCharactersList()
+        val characters: List<StoryCharacter> = viewModel.parseCharactersJson(requireContext())
         adapter = CharactersAdapter()
 
         adapter.setNavController(findNavController())

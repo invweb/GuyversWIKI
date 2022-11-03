@@ -1,25 +1,43 @@
 package com.zx_tole.guyverwiki.ui.vm
 
+import android.content.Context
 import androidx.lifecycle.ViewModel
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import com.zx_tole.guyverwiki.R
 import com.zx_tole.guyverwiki.data.StoryCharacter
+import com.zx_tole.guyverwiki.data.StoryData
+import timber.log.Timber
+import java.io.InputStream
+import java.nio.charset.Charset
 
 class CharactersViewModel: ViewModel() {
-    fun createCharactersList(): List<StoryCharacter> {
-        val characterOne = StoryCharacter(
-            "Masaki Murakami",
-            "",
-            "https://static.wikia.nocookie.net/anime-characters-fight/images/c/c7/Murakami_Masaki_%282%29.jpg/revision/latest/scale-to-width-down/139?cb=20161201162413&path-prefix=ru"
+    fun parseCharactersJson(context: Context): List<StoryCharacter> {
+        val inputStream: InputStream = context.resources.openRawResource(
+            R.raw.characters
         )
 
-        val characterTwo = StoryCharacter(
-            "Мидзуки Сэгава",
-            "",
-            "https://comicvine.gamespot.com/a/uploads/scale_medium/1/19373/1069965-mizuki.jpg"
-        )
+        val size: Int = inputStream.available()
+        val buffer = ByteArray(size)
 
-        return listOf(
-            characterOne,
-            characterTwo
-        )
+        inputStream.read(buffer)
+
+        inputStream.close()
+
+        val myType = object : TypeToken<StoryData>() {}.type
+        val jsonStr = String(buffer, Charset.forName("UTF-8"))
+        val gson = Gson()
+
+        lateinit var char: StoryData
+        try {
+            char = gson.fromJson<StoryData>(
+                jsonStr,
+                myType
+            )
+        } catch (e: Exception) {
+            Timber.d("")
+        }
+
+        return char.characters
     }
 }
