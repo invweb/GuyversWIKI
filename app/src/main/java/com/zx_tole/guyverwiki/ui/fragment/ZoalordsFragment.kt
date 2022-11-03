@@ -39,7 +39,7 @@ class ZoalordsFragment : Fragment() {
 
         binding.zoalordsRecyclerView.setHasFixedSize(true)
 
-        val zoalords: List<StoryCharacter> = viewModel.createZoalordList()
+        val zoalords: List<StoryCharacter> = viewModel.parseZoalordsJson(requireContext())
         adapter = CharactersAdapter()
 
         adapter.setNavController(findNavController())
