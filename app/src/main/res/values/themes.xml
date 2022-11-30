@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Theme.GuyverWIKI" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
@@ -17,6 +17,7 @@
     <style name="Theme.GuyverWIKI.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:windowSplashScreenBackground">@color/black</item>
     </style>
 
     <style name="Theme.GuyverWIKI.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
