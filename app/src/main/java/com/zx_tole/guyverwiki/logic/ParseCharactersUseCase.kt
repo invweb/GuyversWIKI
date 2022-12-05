@@ -10,7 +10,7 @@ import timber.log.Timber
 import java.io.InputStream
 import java.nio.charset.Charset
 
-object ParseCharacters {
+object ParseCharactersUseCase {
     fun parseCharactersJson(context: Context): List<StoryCharacter> {
         val inputStream: InputStream = context.resources.openRawResource(
             R.raw.characters
