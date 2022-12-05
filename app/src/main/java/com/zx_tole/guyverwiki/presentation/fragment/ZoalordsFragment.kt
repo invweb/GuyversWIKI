@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,6 +15,8 @@ import com.zx_tole.guyverwiki.presentation.adapter.CharactersAdapter
 import com.zx_tole.guyverwiki.data.StoryCharacter
 import com.zx_tole.guyverwiki.databinding.FragmentZoalordsBinding
 import com.zx_tole.guyverwiki.presentation.vm.ZoalordsViewModel
+import kotlinx.coroutines.launch
+import timber.log.Timber
 
 
 class ZoalordsFragment : Fragment() {
@@ -39,7 +42,12 @@ class ZoalordsFragment : Fragment() {
 
         binding.zoalordsRecyclerView.setHasFixedSize(true)
 
-        val zoalords: List<StoryCharacter> = viewModel.parseZoalordsJson(requireContext())
+        lateinit var zoalords: List<StoryCharacter>
+        lifecycleScope.launch {
+            zoalords = viewModel.parseZoalordsJson(requireContext())
+            Timber.d("")
+        }
+        //val zoalords: List<StoryCharacter> = viewModel.parseZoalordsJson(requireContext())
         adapter = CharactersAdapter()
 
         adapter.setNavController(findNavController())

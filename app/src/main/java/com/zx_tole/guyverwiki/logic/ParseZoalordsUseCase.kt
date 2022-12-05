@@ -34,7 +34,7 @@ object ParseZoalordsUseCase {
                 myType
             )
         } catch (e: Exception) {
-            Timber.d("parseGuyversJson method exception:")
+            Timber.d("parseCharactersJson method exception:")
             Timber.d(e)
         }
 
