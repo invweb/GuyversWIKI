@@ -10,16 +10,16 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.zx_tole.guyverwiki.presentation.adapter.CharactersAdapter
 import com.zx_tole.guyverwiki.data.StoryCharacter
 import com.zx_tole.guyverwiki.databinding.FragmentGuyversBinding
+import com.zx_tole.guyverwiki.presentation.adapter.GuyversAdapter
 import com.zx_tole.guyverwiki.presentation.vm.GuyversViewModel
 
 class GuyversFragment : Fragment() {
     private var _binding: FragmentGuyversBinding? = null
 
     private val binding get() = _binding!!
-    private lateinit var adapter: CharactersAdapter
+    private lateinit var adapter: GuyversAdapter
 
     private val viewModel: GuyversViewModel by viewModels()
 
@@ -38,7 +38,7 @@ class GuyversFragment : Fragment() {
         binding.guyversRecyclerView.setHasFixedSize(true)
 
         val guyvers: List<StoryCharacter> = viewModel.parseGuyversJson(requireContext())
-        adapter = CharactersAdapter()
+        adapter = GuyversAdapter()
 
         adapter.setNavController(findNavController())
         adapter.setItems(guyvers)
