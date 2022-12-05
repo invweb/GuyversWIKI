@@ -47,7 +47,6 @@ class ZoalordsFragment : Fragment() {
             zoalords = viewModel.parseZoalordsJson(requireContext())
             Timber.d("")
         }
-        //val zoalords: List<StoryCharacter> = viewModel.parseZoalordsJson(requireContext())
         adapter = CharactersAdapter()
 
         adapter.setNavController(findNavController())
