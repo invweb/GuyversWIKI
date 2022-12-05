@@ -14,7 +14,7 @@
         android:theme="@style/Theme.GuyverWIKI"
         >
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".presentation.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.GuyverWIKI.NoActionBar">
             <intent-filter>

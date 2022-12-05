@@ -1,35 +1,33 @@
-package com.zx_tole.guyverwiki.ui.fragment
+package com.zx_tole.guyverwiki.presentation.fragment
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.zx_tole.guyverwiki.adapter.CharactersAdapter
+import com.zx_tole.guyverwiki.presentation.adapter.CharactersAdapter
 import com.zx_tole.guyverwiki.data.StoryCharacter
-import com.zx_tole.guyverwiki.databinding.FragmentZoalordsBinding
-import com.zx_tole.guyverwiki.ui.vm.ZoalordsViewModel
+import com.zx_tole.guyverwiki.databinding.FragmentGuyversBinding
+import com.zx_tole.guyverwiki.presentation.vm.GuyversViewModel
 
-
-class ZoalordsFragment : Fragment() {
-
-    private var _binding: FragmentZoalordsBinding? = null
+class GuyversFragment : Fragment() {
+    private var _binding: FragmentGuyversBinding? = null
 
     private val binding get() = _binding!!
     private lateinit var adapter: CharactersAdapter
 
-    private val viewModel: ZoalordsViewModel by viewModels()
+    private val viewModel: GuyversViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentZoalordsBinding.inflate(inflater, container, false)
+        _binding = FragmentGuyversBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -37,25 +35,29 @@ class ZoalordsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.zoalordsRecyclerView.setHasFixedSize(true)
+        binding.guyversRecyclerView.setHasFixedSize(true)
 
-        val zoalords: List<StoryCharacter> = viewModel.parseZoalordsJson(requireContext())
+        val guyvers: List<StoryCharacter> = viewModel.parseGuyversJson(requireContext())
         adapter = CharactersAdapter()
 
         adapter.setNavController(findNavController())
-        adapter.setItems(zoalords)
+        adapter.setItems(guyvers)
 
         val linearLayoutManager = LinearLayoutManager(requireContext())
         linearLayoutManager.orientation = LinearLayoutManager.VERTICAL
 
-        binding.zoalordsRecyclerView.layoutManager = linearLayoutManager
-        binding.zoalordsRecyclerView.adapter = adapter
+        binding.guyversRecyclerView.layoutManager = linearLayoutManager
+        binding.guyversRecyclerView.adapter = adapter
 
         val dividerItemDecoration = DividerItemDecoration(
-            binding.zoalordsRecyclerView.context,
+            binding.guyversRecyclerView.context,
             linearLayoutManager.orientation
         )
-        binding.zoalordsRecyclerView.addItemDecoration(dividerItemDecoration)
+        binding.guyversRecyclerView.addItemDecoration(dividerItemDecoration)
+
+        val parsedGuyvers = viewModel.parseGuyversJson(requireContext())
+        adapter.setItems(parsedGuyvers)
+        adapter.notifyDataSetChanged()
     }
 
     override fun onDestroyView() {

@@ -1,4 +1,4 @@
-package com.zx_tole.guyverwiki.adapter
+package com.zx_tole.guyverwiki.presentation.adapter
 
 import android.annotation.SuppressLint
 import android.os.Bundle

@@ -1,4 +1,4 @@
-package com.zx_tole.guyverwiki.view
+package com.zx_tole.guyverwiki.presentation.view
 
 import android.content.Context
 import android.content.res.TypedArray

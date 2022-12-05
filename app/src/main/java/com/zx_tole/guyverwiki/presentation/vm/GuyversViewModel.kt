@@ -1,4 +1,4 @@
-package com.zx_tole.guyverwiki.ui.vm
+package com.zx_tole.guyverwiki.presentation.vm
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
@@ -11,10 +11,12 @@ import timber.log.Timber
 import java.io.InputStream
 import java.nio.charset.Charset
 
-class CharactersViewModel: ViewModel() {
-    fun parseCharactersJson(context: Context): List<StoryCharacter> {
+
+class GuyversViewModel: ViewModel() {
+
+    fun parseGuyversJson(context: Context): List<StoryCharacter> {
         val inputStream: InputStream = context.resources.openRawResource(
-            R.raw.characters
+            R.raw.guyvers
         )
 
         val size: Int = inputStream.available()
@@ -35,9 +37,9 @@ class CharactersViewModel: ViewModel() {
                 myType
             )
         } catch (e: Exception) {
-            Timber.d("")
+             Timber.d("")
         }
 
-        return char.characters
+        return char.guyvers
     }
 }

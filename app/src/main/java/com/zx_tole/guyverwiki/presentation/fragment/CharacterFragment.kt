@@ -1,4 +1,4 @@
-package com.zx_tole.guyverwiki.ui.fragment
+package com.zx_tole.guyverwiki.presentation.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater

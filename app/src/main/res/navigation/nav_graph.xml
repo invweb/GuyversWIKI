@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/IndexFragment"
-        android:name="com.zx_tole.guyverwiki.ui.fragment.IndexFragment"
+        android:name="com.zx_tole.guyverwiki.presentation.fragment.IndexFragment"
         android:label="@string/menu_fragment_label"
         tools:layout="@layout/fragment_index">
 
@@ -29,7 +29,7 @@
     </fragment>
     <fragment
         android:id="@+id/ZoalordsFragment"
-        android:name="com.zx_tole.guyverwiki.ui.fragment.ZoalordsFragment"
+        android:name="com.zx_tole.guyverwiki.presentation.fragment.ZoalordsFragment"
         android:label="@string/zoalords_fragment_label"
         tools:layout="@layout/fragment_zoalords">
 
@@ -40,7 +40,7 @@
 
     <fragment
         android:id="@+id/ZoanoidsFragment"
-        android:name="com.zx_tole.guyverwiki.ui.fragment.ZoanoidsFragment"
+        android:name="com.zx_tole.guyverwiki.presentation.fragment.ZoanoidsFragment"
         android:label="@string/menu_item_zoanoids"
         tools:layout="@layout/fragment_zoanoids">
 
@@ -51,7 +51,7 @@
 
     <fragment
         android:id="@+id/GuyversFragment"
-        android:name="com.zx_tole.guyverwiki.ui.fragment.GuyversFragment"
+        android:name="com.zx_tole.guyverwiki.presentation.fragment.GuyversFragment"
         android:label="@string/menu_item_guyvers"
         tools:layout="@layout/fragment_zoanoids">
 
@@ -62,7 +62,7 @@
 
     <fragment
         android:id="@+id/CharactersFragment"
-        android:name="com.zx_tole.guyverwiki.ui.fragment.CharactersFragment"
+        android:name="com.zx_tole.guyverwiki.presentation.fragment.CharactersFragment"
         android:label="@string/menu_item_characters"
         tools:layout="@layout/fragment_zoanoids">
 
@@ -73,7 +73,7 @@
 
     <fragment
         android:id="@+id/CharacterFragment"
-        android:name="com.zx_tole.guyverwiki.ui.fragment.CharacterFragment"
+        android:name="com.zx_tole.guyverwiki.presentation.fragment.CharacterFragment"
         android:label="@string/menu_item_character"
         tools:layout="@layout/fragment_zoanoids">
     </fragment>

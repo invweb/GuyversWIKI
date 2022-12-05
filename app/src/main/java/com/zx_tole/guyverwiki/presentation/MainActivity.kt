@@ -1,4 +1,4 @@
-package com.zx_tole.guyverwiki.ui
+package com.zx_tole.guyverwiki.presentation
 
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar

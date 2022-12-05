@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".ui.fragment.IndexFragment">
+        tools:context=".presentation.fragment.IndexFragment">
 
         <ImageView
             android:id="@+id/imageView"
@@ -44,7 +44,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/menu_title">
 
-            <com.zx_tole.guyverwiki.view.ListItem
+            <com.zx_tole.guyverwiki.presentation.view.ListItem
                 android:id="@+id/guyver_story_characters_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -53,7 +53,7 @@
                 custom:titleText="@string/menu_item_characters"
                 custom:valueColor="#000104" />
 
-            <com.zx_tole.guyverwiki.view.ListItem
+            <com.zx_tole.guyverwiki.presentation.view.ListItem
                 android:id="@+id/guyvers_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -62,7 +62,7 @@
                 custom:titleText="@string/menu_item_guyvers"
                 custom:valueColor="#4D65FF" />
 
-            <com.zx_tole.guyverwiki.view.ListItem
+            <com.zx_tole.guyverwiki.presentation.view.ListItem
                 android:id="@+id/zoanoids_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -71,7 +71,7 @@
                 custom:titleText="@string/menu_item_zoanoids"
                 custom:valueColor="#FF4D71" />
 
-            <com.zx_tole.guyverwiki.view.ListItem
+            <com.zx_tole.guyverwiki.presentation.view.ListItem
                 android:id="@+id/zoalords_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

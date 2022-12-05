@@ -1,7 +1,6 @@
-package com.zx_tole.guyverwiki.ui.vm
+package com.zx_tole.guyverwiki.logic
 
 import android.content.Context
-import androidx.lifecycle.ViewModel
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.zx_tole.guyverwiki.R
@@ -11,10 +10,10 @@ import timber.log.Timber
 import java.io.InputStream
 import java.nio.charset.Charset
 
-class ZoalordsViewModel : ViewModel() {
-    fun parseZoalordsJson(context: Context): List<StoryCharacter> {
+object ParseCharacters {
+    fun parseCharactersJson(context: Context): List<StoryCharacter> {
         val inputStream: InputStream = context.resources.openRawResource(
-            R.raw.zoalords
+            R.raw.characters
         )
 
         val size: Int = inputStream.available()
@@ -38,6 +37,6 @@ class ZoalordsViewModel : ViewModel() {
             Timber.d("")
         }
 
-        return char.zoalords
+        return char.characters
     }
 }

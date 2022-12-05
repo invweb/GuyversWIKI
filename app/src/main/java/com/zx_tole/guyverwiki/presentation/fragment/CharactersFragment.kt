@@ -1,4 +1,4 @@
-package com.zx_tole.guyverwiki.ui.fragment
+package com.zx_tole.guyverwiki.presentation.fragment
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -10,10 +10,10 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.zx_tole.guyverwiki.adapter.CharactersAdapter
+import com.zx_tole.guyverwiki.presentation.adapter.CharactersAdapter
 import com.zx_tole.guyverwiki.data.StoryCharacter
 import com.zx_tole.guyverwiki.databinding.FragmentCharactersBinding
-import com.zx_tole.guyverwiki.ui.vm.CharactersViewModel
+import com.zx_tole.guyverwiki.presentation.vm.CharactersViewModel
 
 class CharactersFragment : Fragment() {
     private val viewModel: CharactersViewModel by viewModels()
@@ -36,7 +36,7 @@ class CharactersFragment : Fragment() {
 
         binding.charactersRecyclerView.setHasFixedSize(true)
 
-        val characters: List<StoryCharacter> = viewModel.parseCharactersJson(requireContext())
+        val characters: List<StoryCharacter> = viewModel.parseCharacters(requireContext())
         adapter = CharactersAdapter()
 
         adapter.setNavController(findNavController())
