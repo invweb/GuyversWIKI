@@ -34,7 +34,8 @@ object ParseCharacters {
                 myType
             )
         } catch (e: Exception) {
-            Timber.d("")
+            Timber.d("parseCharactersJson method exception:")
+            Timber.d(e)
         }
 
         return char.characters
