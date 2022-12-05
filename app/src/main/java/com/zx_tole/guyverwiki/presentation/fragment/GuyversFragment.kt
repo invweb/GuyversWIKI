@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,6 +15,7 @@ import com.zx_tole.guyverwiki.data.StoryCharacter
 import com.zx_tole.guyverwiki.databinding.FragmentGuyversBinding
 import com.zx_tole.guyverwiki.presentation.adapter.GuyversAdapter
 import com.zx_tole.guyverwiki.presentation.vm.GuyversViewModel
+import kotlinx.coroutines.launch
 
 class GuyversFragment : Fragment() {
     private var _binding: FragmentGuyversBinding? = null
@@ -37,7 +39,11 @@ class GuyversFragment : Fragment() {
 
         binding.guyversRecyclerView.setHasFixedSize(true)
 
-        val guyvers: List<StoryCharacter> = viewModel.parseGuyversJson(requireContext())
+        lateinit var guyvers: List<StoryCharacter>
+        lifecycleScope.launch {
+            guyvers = viewModel.parseGuyversJson(requireContext())
+        }
+
         adapter = GuyversAdapter()
 
         adapter.setNavController(findNavController())
@@ -54,9 +60,6 @@ class GuyversFragment : Fragment() {
             linearLayoutManager.orientation
         )
         binding.guyversRecyclerView.addItemDecoration(dividerItemDecoration)
-
-        val parsedGuyvers = viewModel.parseGuyversJson(requireContext())
-        adapter.setItems(parsedGuyvers)
         adapter.notifyDataSetChanged()
     }
 
