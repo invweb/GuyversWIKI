@@ -12,7 +12,6 @@ class ZoalordsViewModel : ViewModel() {
         val deferred = viewModelScope.async {
             ParseZoalordsUseCase.parseZoalordsJson(context)
         }
-
         return deferred.await()
     }
 }
